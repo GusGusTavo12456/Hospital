@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Paciente</title>
+    <link rel="stylesheet" th:href="@{/style-diagnosticos.css}">
+
+</head>
+
+<body>
+<h1>Diagnósticos registrados</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Código</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="diagnostico : ${diagnosticos}">
+        <td th:text="${diagnostico.id}"></td>
+        <td th:text="${diagnostico.nombreDiag}"></td>
+        <td th:text="${diagnostico.codigo}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<p><a th:href="@{/diagnosticos/nuevo}">Registrar nuevo diagnóstico</a></p>
+</body>
+</html>

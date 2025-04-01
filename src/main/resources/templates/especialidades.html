@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Paciente</title>
+    <link rel="stylesheet" th:href="@{/style-especialidad.css}">
+
+</head>
+
+<body>
+<h1>Especialidades médicas registradas</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Código</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="especialidad : ${especialidades}">
+        <td th:text="${especialidad.id}"></td>
+        <td th:text="${especialidad.nombreEspeci}"></td>
+        <td th:text="${especialidad.codigo}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<p><a th:href="@{/especialidades/nuevo}">Registrar nueva especialidad</a></p>
+</body>
+</html>

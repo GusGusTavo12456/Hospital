@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Paciente</title>
+    <link rel="stylesheet" th:href="@{/style-doctores.css}">
+</head>
+
+<body>
+<h1>Registrar nuevo doctor</h1>
+
+<form th:action="@{/doctores/guardar}" method="post">
+    <label>Nombre:</label>
+    <input type="text" name="nombreDoc" required><br><br>
+
+    <label>DNI:</label>
+    <input type="text" name="dni" required><br><br>
+
+    <label>Especialidad:</label>
+    <select name="especialidad.id" required>
+        <option th:each="esp : ${especialidades}"
+                th:value="${esp.id}"
+                th:text="${esp.nombreEspeci}">
+        </option>
+    </select><br><br>
+
+    <button type="submit">Guardar</button>
+</form>
+
+<p><a th:href="@{/doctores}">Volver a la lista</a></p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Paciente</title>
+    <link rel="stylesheet" th:href="@{/style-doctores.css}">
+
+</head>
+
+<body>
+<h1>Doctores registrados</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>DNI</th>
+        <th>Especialidad</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="doctor : ${doctores}">
+        <td th:text="${doctor.id}"></td>
+        <td th:text="${doctor.nombreDoc}"></td>
+        <td th:text="${doctor.dni}"></td>
+        <td th:text="${doctor.especialidad?.nombreEspeci}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<p><a th:href="@{/doctores/nuevo}">Registrar nuevo doctor</a></p>
+</body>
+</html>

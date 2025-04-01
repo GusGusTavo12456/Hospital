@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+<h1>Bienvenido al sistema médico</h1>
+<p>Amén 🕊️</p>
+
+<h2>🩺 Navegación</h2>
+<ul>
+    <li><a th:href="@{/pacientes}">📋 Ver pacientes</a></li>
+    <li><a th:href="@{/pacientes/nuevo}">➕ Registrar paciente</a></li>
+
+    <li><a th:href="@{/medicamentos}">💊 Ver medicamentos</a></li>
+    <li><a th:href="@{/medicamentos/nuevo}">➕ Registrar medicamento</a></li>
+
+    <li><a th:href="@{/doctores}">👨‍⚕️ Ver doctores</a></li>
+    <li><a th:href="@{/doctores/nuevo}">➕ Registrar doctor</a></li>
+
+    <li><a th:href="@{/especialidades}">📚 Ver especialidades</a></li>
+    <li><a th:href="@{/especialidades/nuevo}">➕ Registrar especialidad</a></li>
+
+    <li><a th:href="@{/diagnosticos}">🧪 Ver diagnósticos</a></li>
+    <li><a th:href="@{/diagnosticos/nuevo}">➕ Registrar diagnóstico</a></li>
+</ul>
+</body>
+</html>

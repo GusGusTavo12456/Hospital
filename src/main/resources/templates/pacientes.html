@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Paciente</title>
+    <link rel="stylesheet" th:href="@{/style-pacientes.css}">
+
+</head>
+
+<body>
+<h1>Pacientes registrados</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>DNI</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="paciente : ${pacientes}">
+        <td th:text="${paciente.id}"></td>
+        <td th:text="${paciente.nombre}"></td>
+        <td th:text="${paciente.edad}"></td>
+        <td th:text="${paciente.dni}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

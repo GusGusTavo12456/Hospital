@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Paciente</title>
+    <link rel="stylesheet" th:href="@{/style-medicamentos.css}">
+</head>
+
+<body>
+<h1>Medicamentos registrados</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Fecha Vencimiento</th>
+        <th>Concentración</th>
+        <th>Paciente</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="medicamento : ${medicamentos}">
+        <td th:text="${medicamento.id}"></td>
+        <td th:text="${medicamento.nombreMedi}"></td>
+        <td th:text="${medicamento.cantidad}"></td>
+        <td th:text="${medicamento.fechaVencimiento}"></td>
+        <td th:text="${medicamento.concentracion}"></td>
+        <td th:text="${medicamento.paciente.nombre}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<p><a th:href="@{/medicamentos/nuevo}">Registrar nuevo medicamento</a></p>
+</body>
+</html>
